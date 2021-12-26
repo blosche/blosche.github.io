@@ -12,8 +12,8 @@ const image1 = new Image();
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 
-canvas.width = 600;
-canvas.height = 600;
+canvas.width = 700;
+canvas.height = 700;
 function start(){
     
     image1.src =      
@@ -57,7 +57,7 @@ function start(){
 }
 const finMappedImage = start();
 
-const numOfParticles = 3000;
+const numOfParticles = 5000;
 
 
 
@@ -67,8 +67,8 @@ class Particle {
         this.x = Math.random() * canvas.width;
         this.y = 0;
         this.speed = 0;
-        this.velocity = Math.random() * 1.5;
-        this.size = Math.random() * 3.5 + 1;
+        this.velocity = Math.random() * 1.0;
+        this.size = Math.random() * 4.5 + 1;
         this.position1 = Math.floor(this.y);
         this.position2 = Math.floor(this.x);
     }
@@ -90,11 +90,10 @@ class Particle {
     draw(){
         if (this.dead != 1){
             ctx.beginPath();
-            var r = () => (Math.random() * 156 + 100);
+            var r = () => (Math.random() * 205 + 50);
             var color = `rgb(${r()}, ${r()}, ${r()})`;
             ctx.fillStyle = color;
             ctx.fillRect(this.x, this.y, this.size, this.size);
-            //ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
         }
     }
