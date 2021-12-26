@@ -5,6 +5,7 @@ canvas.height = 450;
 
 const image1 = new Image();
 
+image1.crossOrigin = "anonymous";
 image1.src = 'Circle.png';
 
 
